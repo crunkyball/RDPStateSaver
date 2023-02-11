@@ -33,7 +33,6 @@ namespace RDPStateSaver
             sysTrayIcon.Icon = Properties.Resources.Icon;
 
             sysTrayMenu_AutoManageState.Checked = Properties.Settings.Default.AutoManageState;
-            sysTrayMenu_AutoSaveInterval.Enabled = Properties.Settings.Default.AutoManageState;
             sysTrayMenu_AutoSaveInterval.Text = Properties.Settings.Default.AutoSaveInterval.ToString();
 
             sysTrayMenu_SystemEventRemote.Checked = Properties.Settings.Default.SaveSystemEvent == SaveSystemEvent.RemoteDisconnect;
