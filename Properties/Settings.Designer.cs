@@ -12,7 +12,7 @@ namespace RDPStateSaver.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.4.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -25,7 +25,7 @@ namespace RDPStateSaver.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("30000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("5000")]
         public int AutoSaveInterval {
             get {
                 return ((int)(this["AutoSaveInterval"]));
@@ -44,6 +44,18 @@ namespace RDPStateSaver.Properties {
             }
             set {
                 this["AutoManageState"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("RemoteDisconnect")]
+        public global::RDPStateSaver.SaveSystemEvent SaveSystemEvent {
+            get {
+                return ((global::RDPStateSaver.SaveSystemEvent)(this["SaveSystemEvent"]));
+            }
+            set {
+                this["SaveSystemEvent"] = value;
             }
         }
     }

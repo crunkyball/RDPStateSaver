@@ -3,10 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="AutoSaveInterval" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">30000</Value>
+      <Value Profile="(Default)">5000</Value>
     </Setting>
     <Setting Name="AutoManageState" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SaveSystemEvent" Type="RDPStateSaver.SaveSystemEvent" Scope="User">
+      <Value Profile="(Default)">RemoteDisconnect</Value>
     </Setting>
   </Settings>
 </SettingsFile>

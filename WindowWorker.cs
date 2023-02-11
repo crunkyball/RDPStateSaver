@@ -48,7 +48,9 @@ namespace RDPStateSaver
         {
             Task.Run(async delegate
             {
-                await Task.Delay(500); //Slight delay before starting.
+                const int kSmallDelay = 500;
+
+                await Task.Delay(kSmallDelay); //Slight delay before starting.
 
                 while (true)
                 {
@@ -57,10 +59,20 @@ namespace RDPStateSaver
 
                     if (state == State.RUNNING)
                     {
-                        SaveWindowsState(SavedState);
+                        WindowSavedState pendingSavedState = new WindowSavedState();
+                        SaveWindowsState(pendingSavedState);
+
+                        //To prevent issues when saving and disconnecting at the same time we temporarily 
+                        //store the latest state as pending and only accept it after a period of time.
+                        await Task.Delay(kSmallDelay);
+
+                        if (state == State.RUNNING) //Are we STILL in the running state?
+                        {
+                            SavedState = pendingSavedState;
+                        }
                     }
 
-                    await Task.Delay(Properties.Settings.Default.AutoSaveInterval);
+                    await Task.Delay(Properties.Settings.Default.AutoSaveInterval - kSmallDelay);
                 }
 
                 state = State.STOPPED;
