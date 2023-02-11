@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+JSON/Schemas/Catalog/**   # Darrell: No idea what this is but I'm pretty sure we don't need it.
+
+/JSON/Schemas/Catalog
